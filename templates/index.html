@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Data Generator</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Fake Data Generator</h1>
+        <form id="dataForm">
+            <div class="card">
+                <div class="card-body">
+                    <fieldset>
+                        <legend>Select fields to include:</legend>
+                        <div id="fieldList" class="row">
+                            <!-- Name -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="name" name="fields" value="name">
+                                    <label class="form-check-label" for="name">Name</label>
+                                </div>
+                            </div>
+                            <!-- Address -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="address" name="fields" value="address">
+                                    <label class="form-check-label" for="address">Address</label>
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="email" name="fields" value="email">
+                                    <label class="form-check-label" for="email">Email</label>
+                                </div>
+                            </div>
+                            <!-- Phone Number -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="phone-number" name="fields" value="phone_number">
+                                    <label class="form-check-label" for="phone-number">Phone Number</label>
+                                </div>
+                            </div>
+                            <!-- Social Security Number -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ssn" name="fields" value="ssn">
+                                    <label class="form-check-label" for="ssn">Social Security Number</label>
+                                </div>
+                            </div>
+                            <!-- Date of Birth -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="date-of-birth" name="fields" value="date_of_birth">
+                                    <label class="form-check-label" for="date-of-birth">Date of Birth</label>
+                                </div>
+                            </div>
+                            <!-- Age -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="age" name="fields" value="random_int">
+                                    <label class="form-check-label" for="age">Age</label>
+                                </div>
+                            </div>
+                            <!-- Username -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="username" name="fields" value="user_name">
+                                    <label class="form-check-label" for="username">Username</label>
+                                </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="password" name="fields" value="password">
+                                    <label class="form-check-label" for="password">Password</label>
+                                </div>
+                            </div>
+                            <!-- Lorem Ipsum Text -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="text" name="fields" value="text">
+                                    <label class="form-check-label" for="text">Lorem Ipsum Text</label>
+                                </div>
+                            </div>
+                            <!-- Sentence -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sentence" name="fields" value="sentence">
+                                    <label class="form-check-label" for="sentence">Sentence</label>
+                                </div>
+                            </div>
+                            <!-- Paragraph -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="paragraph" name="fields" value="paragraph">
+                                    <label class="form-check-label" for="paragraph">Paragraph</label>
+                                </div>
+                            </div>
+                            <!-- Random Integer -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="random-integer" name="fields" value="random_int">
+                                    <label class="form-check-label" for="random-integer">Random Integer</label>
+                                </div>
+                            </div>
+                            <!-- Random Float -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="random-float" name="fields" value="random_number">
+                                    <label class="form-check-label" for="random-float">Random Float</label>
+                                </div>
+                            </div>
+                            <!-- Random Percentage -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="random-percentage" name="fields" value="random_element">
+                                    <label class="form-check-label" for="random-percentage">Random Percentage</label>
+                                </div>
+                            </div>
+                            <!-- Random Date -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="random-date" name="fields" value="date">
+                                    <label class="form-check-label" for="random-date">Random Date</label>
+                                </div>
+                            </div>
+                            <!-- Random Time -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="random-time" name="fields" value="time">
+                                    <label class="form-check-label" for="random-time">Random Time</label>
+                                </div>
+                            </div>
+                            <!-- Random Datetime -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="random-datetime" name="fields" value="date_time">
+                                    <label class="form-check-label" for="random-datetime">Random Datetime</label>
+                                </div>
+                            </div>
+                            <!-- Timezone -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="timezone" name="fields" value="timezone">
+                                    <label class="form-check-label" for="timezone">Timezone</label>
+                                </div>
+                            </div>
+                            <!-- URL -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="url" name="fields" value="url">
+                                    <label class="form-check-label" for="url">URL</label>
+                                </div>
+                            </div>
+                            <!-- Domain Name -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="domain-name" name="fields" value="domain_name">
+                                    <label class="form-check-label" for="domain-name">Domain Name</label>
+                                </div>
+                            </div>
+                            <!-- IPv4 Address -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ipv4-address" name="fields" value="ipv4">
+                                    <label class="form-check-label" for="ipv4-address">IPv4 Address</label>
+                                </div>
+                            </div>
+                            <!-- IPv6 Address -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ipv6-address" name="fields" value="ipv6">
+                                    <label class="form-check-label" for="ipv6-address">IPv6 Address</label>
+                                </div>
+                            </div>
+                            <!-- User Agent -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="user-agent" name="fields" value="user_agent">
+                                    <label class="form-check-label" for="user-agent">User Agent</label>
+                                </div>
+                            </div>
+                            <!-- MAC Address -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="mac-address" name="fields" value="mac_address">
+                                    <label class="form-check-label" for="mac-address">MAC Address</label>
+                                </div>
+                            </div>
+                            <!-- Company Name -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="company-name" name="fields" value="company">
+                                    <label class="form-check-label" for="company-name">Company Name</label>
+                                </div>
+                            </div>
+                            <!-- Job Title -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="job-title" name="fields" value="job">
+                                    <label class="form-check-label" for="job-title">Job Title</label>
+                                </div>
+                            </div>
+                            <!-- Credit Card Number -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="credit-card-number" name="fields" value="credit_card_number">
+                                    <label class="form-check-label" for="credit-card-number">Credit Card Number</label>
+                                </div>
+                            </div>
+                            <!-- Credit Card Expiration Date -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="credit-card-expiration-date" name="fields" value="credit_card_expire">
+                                    <label class="form-check-label" for="credit-card-expiration-date">Credit Card Expiration Date</label>
+                                </div>
+                            </div>
+                            <!-- Credit Card Security Code -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="credit-card-security-code" name="fields" value="credit_card_security_code">
+                                    <label class="form-check-label" for="credit-card-security-code">Credit Card Security Code</label>
+                                </div>
+                            </div>
+                            <!-- Latitude -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="latitude" name="fields" value="latitude">
+                                    <label class="form-check-label" for="latitude">Latitude</label>
+                                </div>
+                            </div>
+                            <!-- Longitude -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="longitude" name="fields" value="longitude">
+                                    <label class="form-check-label" for="longitude">Longitude</label>
+                                </div>
+                            </div>
+                            <!-- Color Name -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="color-name" name="fields" value="color_name">
+                                    <label class="form-check-label" for="color-name">Color Name</label>
+                                </div>
+                            </div>
+                            <!-- Hex Color -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="hex-color" name="fields" value="hex_color">
+                                    <label class="form-check-label" for="hex-color">Hex Color</label>
+                                </div>
+                            </div>
+                            <!-- File Name -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="file-name" name="fields" value="file_name">
+                                    <label class="form-check-label" for="file-name">File Name</label>
+                                </div>
+                            </div>
+                            <!-- File Extension -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="file-extension" name="fields" value="file_extension">
+                                    <label class="form-check-label" for="file-extension">File Extension</label>
+                                </div>
+                            </div>
+                            <!-- Boolean Value -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="boolean-value" name="fields" value="boolean">
+                                    <label class="form-check-label" for="boolean-value">Boolean Value</label>
+                                </div>
+                            </div>
+                            <!-- UUID -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="uuid" name="fields" value="uuid4">
+                                    <label class="form-check-label" for="uuid">UUID</label>
+                                </div>
+                            </div>
+                            <!-- Language -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="language" name="fields" value="language_code">
+                                    <label class="form-check-label" for="language">Language</label>
+                                </div>
+                            </div>
+                            <!-- Country -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="country" name="fields" value="country">
+                                    <label class="form-check-label" for="country">Country</label>
+                                </div>
+                            </div>
+                            <!-- Currency -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="currency" name="fields" value="currency_name">
+                                    <label class="form-check-label" for="currency">Currency</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="form-group">
+            <label for="numRecordsInput">Number of Records:</label>
+            <input type="number" class="form-control" id="numRecordsInput" name="numRecords" value="50" min="1">
+        </div>
+            <button type="button" class="btn btn-primary mt-3" id="generateBtn">Generate Data</button>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS (optional for certain features) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to generate and download the CSV file
+function generateAndDownloadCSV() {
+    const selectedFields = Array.from(document.querySelectorAll('input[name="fields"]:checked')).map(checkbox => checkbox.value);
+    const numRecords = document.getElementById('numRecordsInput').value; // Get number of records from the input field
+
+    if (!numRecords || numRecords <= 0) {
+        alert("Invalid number of records.");
+        return;
+    }
+
+    if (selectedFields.length === 0) {
+        alert("Please select at least one field.");
+        return;
+    }
+
+    // Construct URL for data generation
+    const url = `/generate_data?${selectedFields.map(field => `fields=${field}`).join('&')}&num_records=${numRecords}`;
+    // Redirect to the generated data URL
+    window.location.href = url;
+}
+
+// Attach event listener to generate button
+document.getElementById('generateBtn').addEventListener('click', generateAndDownloadCSV);
+    </script>
+</body>
+
+</html>
